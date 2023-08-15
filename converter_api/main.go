@@ -4,12 +4,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/andreabreu76/converter_api/config"
-	"github.com/andreabreu76/converter_api/controllers"
-	"github.com/andreabreu76/converter_api/middlewares"
-	"github.com/andreabreu76/converter_api/repositories"
-	"github.com/andreabreu76/converter_api/routes"
-	"github.com/andreabreu76/converter_api/services"
+	"github.com/andreabreu76/chalenge_convapi/config"
+	"github.com/andreabreu76/chalenge_convapi/controllers"
+	"github.com/andreabreu76/chalenge_convapi/middlewares"
+	"github.com/andreabreu76/chalenge_convapi/repositories"
+	"github.com/andreabreu76/chalenge_convapi/routes"
+	"github.com/andreabreu76/chalenge_convapi/services"
 	"github.com/gorilla/mux"
 )
 

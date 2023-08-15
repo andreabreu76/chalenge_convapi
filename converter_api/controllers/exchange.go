@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/andreabreu76/converter_api/entities"
-	"github.com/andreabreu76/converter_api/services"
-	"github.com/andreabreu76/converter_api/utils"
+	"github.com/andreabreu76/chalenge_convapi/entities"
+	"github.com/andreabreu76/chalenge_convapi/services"
+	"github.com/andreabreu76/chalenge_convapi/utils"
 	"github.com/gorilla/mux"
 )
 

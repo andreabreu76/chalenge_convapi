@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/andreabreu76/converter_api/entities"
-	"github.com/andreabreu76/converter_api/repositories"
+	"github.com/andreabreu76/chalenge_convapi/entities"
+	"github.com/andreabreu76/chalenge_convapi/repositories"
 )
 
 type ExchangeService interface {

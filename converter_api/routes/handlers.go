@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/andreabreu76/converter_api/controllers"
-	"github.com/andreabreu76/converter_api/middlewares"
+	"github.com/andreabreu76/chalenge_convapi/controllers"
+	"github.com/andreabreu76/chalenge_convapi/middlewares"
 	"github.com/gorilla/mux"
 )
 

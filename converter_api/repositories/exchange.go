@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/andreabreu76/converter_api/entities"
+	"github.com/andreabreu76/chalenge_convapi/entities"
 	"gorm.io/gorm"
 )
 

@@ -1,4 +1,4 @@
-module github.com/andreabreu76/converter_api
+module github.com/andreabreu76/chalenge_convapi
 
 go 1.21.0
 

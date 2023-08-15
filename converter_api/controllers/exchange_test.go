@@ -1,13 +1,14 @@
 package controllers
 
 import (
-	"github.com/andreabreu76/converter_api/entities"
-	"github.com/andreabreu76/converter_api/services"
-	"github.com/golang/mock/gomock"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/andreabreu76/chalenge_convapi/entities"
+	"github.com/andreabreu76/chalenge_convapi/services"
+	"github.com/golang/mock/gomock"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestExchangeHandlers_ConvertCurrency(t *testing.T) {
