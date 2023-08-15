@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  database:
+    build:
+      context: ./docker/
+      dockerfile: mysql.dockerfile
+    image: ${APP_ENTITY}/mysql
+    container_name: ${APP_NAME}-database
+    tty: true
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      TZ: "America/Sao_Paulo"
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_PORT: ${MYSQL_PORT}
+    ports:
+      - ${MYSQL_EXT_PORT}:${MYSQL_PORT}
+    networks:
+      - converterapi
+
+  app:
+    build:
+      context: ./docker/
+      dockerfile: go.dockerfile
+    image: ${APP_ENTITY}/golang
+    container_name: ${APP_NAME}-go
+    tty: true
+    command: [ "go", "run", "/go/src/app/main.go" ]
+    environment:
+      TZ: "America/Sao_Paulo"
+      SERVICE_NAME: ${APP_NAME}-go
+      SERVICE_TAGS: ${APP_ENV}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_HOST: database
+      SECRET_TOKEN: ${SECRET_TOKEN}
+    volumes:
+      - ./converter_api/:/go/src/app/
+    ports:
+      - ${APP_EXT_PORT}:${APP_PORT}
+    networks:
+      - converterapi
+
+volumes:
+  dbdata:
+    driver: local
+networks:
+  converterapi:
+    driver: "bridge"
